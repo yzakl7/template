@@ -1,0 +1,18 @@
+footer{
+  color: white;
+  background: rgba(0,0,0,.85);
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  ul{
+    flex: 1;
+    max-width: 1024px;
+    li{
+      list-style: none;
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

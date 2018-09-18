@@ -1,0 +1,60 @@
+<header>
+  <div class="top_bar">
+    <div class="top_bar_row">
+      <a href="#openMenu" id="closeMenu" class="header_icon"><i class="material-icons">menu</i></a>
+      <h1>{{innerWidth}}</h1>
+      <input type="search">
+      <i class="material-icons header_icon">search</i>
+    </div>
+    <nav *ngIf="innerWidth >= 600" class="header_nav">
+      <ul>
+        <li>
+          <a [routerLink]="['/']">
+            <i class="material-icons">link</i>
+            <p>Page 1: home</p>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/page2']">
+            <i class="material-icons">link</i>
+            <p>Page 2: x page</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="material-icons">link</i>
+            <p>Page 3: x2 page</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<dialog *ngIf="innerWidth <= 600" class="side_nav" id="openMenu" tabindex="-1">
+  <nav class="mobile_menu">
+    <ul>
+      <a href="#closeMenu" class="close" aria-label="Close dialog"><i class="material-icons close_icon">close</i></a>
+      <li>
+        <a [routerLink]="['/']">
+          <i class="material-icons">link</i>
+          <p>Page 1: home</p>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/page2']">
+          <i class="material-icons">link</i>
+          <p>Page 2: x page</p>
+
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="material-icons">link</i>
+          <p>Page 3: x2 page</p>
+
+        </a>
+      </li>
+    </ul>
+  </nav>
+</dialog>
+
