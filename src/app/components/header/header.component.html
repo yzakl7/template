@@ -1,10 +1,8 @@
 <header>
   <div class="top_bar">
     <div class="top_bar_row">
-      <a href="#openMenu" id="closeMenu" class="header_icon"><i class="material-icons">menu</i></a>
-      <h1>{{innerWidth}}</h1>
-      <input type="search">
-      <i class="material-icons header_icon">search</i>
+      <a (click)="menuHandler()" id="closeMenu" class="header_icon"><i class="material-icons">menu</i></a>
+      <h1>{{innerWidth}}{{isOpen}}</h1>
     </div>
     <nav *ngIf="innerWidth >= 600" class="header_nav">
       <ul>
@@ -30,18 +28,26 @@
     </nav>
   </div>
 </header>
-<dialog *ngIf="innerWidth <= 600" class="side_nav" id="openMenu" tabindex="-1">
+<dialog
+  *ngIf="innerWidth <= 600 && isOpen"
+  class="side_nav"
+  id="openMenu"
+  tabindex="-1"
+  @menuAnimation
+  >
   <nav class="mobile_menu">
     <ul>
-      <a href="#closeMenu" class="close" aria-label="Close dialog"><i class="material-icons close_icon">close</i></a>
+      <a (click)="menuHandler()" class="close" aria-label="Close dialog">
+        <i class="material-icons close_icon">close</i>
+      </a>
       <li>
-        <a [routerLink]="['/']">
+        <a [routerLink]="['/']" (click)="menuHandler()">
           <i class="material-icons">link</i>
           <p>Page 1: home</p>
         </a>
       </li>
       <li>
-        <a [routerLink]="['/page2']">
+        <a [routerLink]="['/page2']" (click)="menuHandler()">
           <i class="material-icons">link</i>
           <p>Page 2: x page</p>
 
@@ -49,7 +55,7 @@
       </li>
       <li>
         <a href="#">
-          <i class="material-icons">link</i>
+          <i class="material-icons" (click)="menuHandler()">link</i>
           <p>Page 3: x2 page</p>
 
         </a>

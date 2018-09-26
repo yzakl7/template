@@ -31,15 +31,7 @@ header{
       h1{
         flex: 1;
       }
-      input[type=search]{
-        border-radius: 4px;
-        border: none;
-        margin-right: -35px;
-        padding-right: 35px;
-        padding-left: 5px;
-        background: rgba(150,150,150,.5);
-        height: 35px;
-      }
+
     }
     .header_nav{
       display: flex;
@@ -74,23 +66,18 @@ header{
   .side_nav {
     z-index: 100;
     display: flex;
-    opacity: 0;
     padding: 0;
     flex-direction: column;
-    visibility: hidden;
-    transition: all ease-in-out .3s;
-    position: absolute;
+    // transition: all ease-in-out .3s;
+    position: fixed;
     top: 0;
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,0);
     height: 100vh;
     width: 100vw;
     border: none;
     box-sizing: border-box;
-    &:target {
-      opacity: 1;
-      visibility: visible;
-    }
-    .mobile_menu{
+    visibility: visible;
+      .mobile_menu{
       box-sizing: border-box;
       display: flex;
       flex: 1;
@@ -99,6 +86,9 @@ header{
         padding: 0;
         box-sizing: border-box;
         background: white;
+        -webkit-box-shadow:  4px 5px 5px 0px rgba(0,0,0,0.23);
+        -moz-box-shadow:  4px 5px 5px 0px rgba(0,0,0,0.23);
+        box-shadow:  4px 5px 5px 0px rgba(0,0,0,0.23);
         display: flex;
         align-items: flex-end;
         flex-direction: column;
@@ -112,7 +102,7 @@ header{
           justify-content: center;
         }
         li{
-          border-left: 5px solid rgba(0,0,0,.8);
+          //border-right: 5px solid rgba(0,0,0,.8);
           display: flex;
           align-items: center;
           margin-bottom: 2px;

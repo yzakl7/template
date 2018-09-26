@@ -1,6 +1,10 @@
 <section class="section1">
   <div class="left side">
-    <div *ngFor="let post of posts">
+    <div class="search-bar">
+      <i class="material-icons header_icon">search</i>
+      <input type="search" (keyup)="onKey($event)">
+    </div>
+    <div *ngFor="let post of posts | searchFilter: {title: searchText, subtitle:searchText}; " @fadeIn>
       <app-post-box
         [title]='post.title'
         [image]='post.image'
@@ -11,9 +15,9 @@
   </div>
   <div class="right side">
     <app-post-box
-      [image]='user[0].image'
-      [subtitle]='user[0].subtitle'
-      [description]='user[0].description'
+      [image]='user.image'
+      [subtitle]='user.subtitle'
+      [description]='user.description'
       ></app-post-box>
   </div>
 
